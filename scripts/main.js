@@ -1,14 +1,23 @@
-// Load header and sidebar
-document.getElementById("header").innerHTML = fetch("includes/header.html").then(r => r.text()).then(html => document.getElementById("header").innerHTML = html);
-document.getElementById("sidebar").innerHTML = fetch("includes/sidebar.html").then(r => r.text()).then(html => document.getElementById("sidebar").innerHTML = html);
+window.addEventListener("DOMContentLoaded", () => {
+loadInclude("header", "includes/header.html");
+loadInclude("sidebar", "includes/sidebar.html");
+});
 
-// Function to load page content dynamically
+
+function loadInclude(id, url) {
+fetch(url)
+.then(res => res.text())
+.then(html => document.getElementById(id).innerHTML = html);
+}
+
+
 function loadPage(page) {
-  fetch(`pages/${page}.html`)
-    .then(response => response.ok ? response.text() : "<h2>404 - Page Not Found</h2>")
-    .then(html => {
-      const content = document.getElementById("content");
-      content.innerHTML = html;
-      content.scrollTop = 0;
-    });
+fetch(`pages/${page}.html`)
+.then(res => res.ok ? res.text() : Promise.reject())
+.then(html => {
+const content = document.getElementById("content");
+content.innerHTML = html;
+content.scrollTop = 0;
+})
+.catch(() => document.getElementById("content").innerHTML = "<h2>404 - Page Not Found</h2>");
 }
