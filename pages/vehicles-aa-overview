@@ -1,0 +1,10 @@
+<h2>Vehicles Overview</h2>
+<p>Vehicles are essential for restocking your store in Retail Tycoon 2.</p>
+
+<table border="1" style="border-collapse: collapse; width: 100%;">
+  <tr><th>Vehicle</th><th>Capacity</th><th>Speed</th></tr>
+  <tr><td>Pickup</td><td>200</td><td>Fast</td></tr>
+  <tr><td>Semi</td><td>800</td><td>Moderate</td></tr>
+</table>
+
+<img src="../data/vehicles/semi.png" alt="Semi Truck" style="width: 100%; max-width: 400px; margin-top: 10px;">
