@@ -1,60 +1,65 @@
 :root {
-border-bottom: 2px solid var(--accent-color);
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 0 15px;
-z-index: 100;
+    border-bottom: 2px solid var(--accent-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    z-index: 100;
+}
+
+:root{
+  --bg: #222020;
+  --accent: #009DFF;
 }
 
 
 .container {
-display: flex;
-flex: 1;
-margin-top: 50px;
-overflow: hidden;
+    display: flex;
+    flex: 1;
+    margin-top: 50px;
+    overflow: hidden;
 }
 
 
 aside {
-width: 250px;
-background: var(--bg-light);
-border-right: 2px solid var(--accent-color);
-padding: 10px;
-overflow-y: auto;
+    width: 250px;
+    background: var(--bg-light);
+    border-right: 2px solid var(--accent-color);
+    padding: 10px;
+    overflow-y: auto;
 }
 
 
 main {
-flex: 1;
-padding: 15px;
-overflow-y: auto;
-box-sizing: border-box;
-animation: fadeIn 0.3s ease;
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    animation: fadeIn 0.3s ease;
 }
 
 
 summary {
-cursor: pointer;
-color: var(--accent-color);
-font-weight: bold;
+    cursor: pointer;
+    color: var(--accent-color);
+    font-weight: bold;
 }
 
 
 li {
-list-style: none;
-margin: 4px 0;
-cursor: pointer;
-color: var(--text-muted);
+    list-style: none;
+    margin: 4px 0;
+    cursor: pointer;
+    color: var(--text-muted);
 }
 
 
 li:hover {
-color: var(--accent-color);
+    color: var(--accent-color);
 }
 
 
 @keyframes fadeIn {
-from { opacity: 0; }
-to { opacity: 1; }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
