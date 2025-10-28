@@ -40,6 +40,7 @@ function loadPage(page) {
     .catch(() => {
       document.getElementById(
         "content"
-      ).innerHTML = "<h2>404 - Page Not Found</h2>";
+      ).innerHTML = 
+      "<h4>404</h4><h5>Oops! The page you're looking for doesn't exist (yet).</h5><h5>You can use the sidebar to view another page.</h5><h5>If you think this is a mistake, feel free to contact MyNameIsntRealHere via Discord (@kwallentrein) or Roblox (@MyNameIsntRealHere)!</h5>";
     });
 }
