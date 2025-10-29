@@ -234,6 +234,29 @@ main {
   color: #FFFFFF;
 }
 
+/* FAQ-BUTTONS------------------------------------------------------------------------------- */
+
+.faq-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.faq-buttons button {
+  background-color: var(--bg);
+  color: white;
+  border: 3px solid var(--accent);
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.faq-buttons button:hover {
+  background-color: var(--accent);
+}
+
 /* SCROLLBAR--------------------------------------------------------------------------------- */
 
 ::-webkit-scrollbar {
