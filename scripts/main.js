@@ -49,6 +49,6 @@ window.addEventListener("DOMContentLoaded", () => {
   loadInclude("sidebar", "includes/sidebar.html");
 
   if (window.innerWidth < 800) {
-    alert("⚠️ This site is best viewed on a larger screen.\nSome elements may not display correctly.");
+    alert("⚠️ This site is best viewed on a larger screen.\nSome elements will not display correctly.\nPutting your device horizontally might help at least a bit.");
   }
 });
