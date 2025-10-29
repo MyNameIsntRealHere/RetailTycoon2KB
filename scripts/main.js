@@ -23,7 +23,6 @@ function loadInclude(id, url) {
     });
 }
 
-// Load content pages dynamically
 function loadPage(page) {
   const base =
     location.hostname === "MyNameIsntRealHere.github.io"
@@ -44,3 +43,12 @@ function loadPage(page) {
       "<h4>404</h4><h5>Oops! The page you're looking for doesn't exist (yet).</h5><h5>You can use the sidebar to view another page.</h5><h5>If you think this is a mistake, feel free to contact MyNameIsntRealHere via Discord (@kwallentrein) or Roblox (@MyNameIsntRealHere)!</h5>";
     });
 }
+
+window.addEventListener("DOMContentLoaded", () => {
+  loadInclude("header", "includes/header.html");
+  loadInclude("sidebar", "includes/sidebar.html");
+
+  if (window.innerWidth < 800) {
+    alert("⚠️ This site is best viewed on a larger screen.\nSome elements may not display correctly.");
+  }
+});
