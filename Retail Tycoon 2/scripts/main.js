@@ -63,3 +63,46 @@ function scrollToSection(id) {
     el.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 }
+
+window.addEventListener("DOMContentLoaded", () => {
+  loadInclude("header", "includes/header.html");
+  loadInclude("sidebar", "includes/sidebar.html");
+});
+
+document.addEventListener("click", (e) => {
+  if (e.target.id === "menuToggle") {
+    document.getElementById("sidebar").classList.toggle("active");
+  }
+});
+
+// --- Move header buttons into sidebar on small screens ---
+function setupResponsiveButtons() {
+  const headerButtons = document.querySelector(".headerbuttons");
+  const sidebar = document.getElementById("sidebar");
+
+  if (!headerButtons || !sidebar) return;
+
+  function moveButtons() {
+    if (window.innerWidth <= 800) {
+      // Move to sidebar if not already there
+      if (!sidebar.contains(headerButtons)) {
+        sidebar.prepend(headerButtons);
+      }
+    } else {
+      // Move back to header
+      const header = document.getElementById("header");
+      if (!header.contains(headerButtons)) {
+        // Adjust this selector depending on where your buttons normally sit
+        header.appendChild(headerButtons);
+      }
+    }
+  }
+
+  moveButtons(); // Run once on load
+  window.addEventListener("resize", moveButtons);
+}
+
+// Wait until includes are loaded, then run the setup
+window.addEventListener("load", () => {
+  setTimeout(setupResponsiveButtons, 300);
+});
